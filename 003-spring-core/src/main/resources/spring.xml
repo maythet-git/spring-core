@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="companyController"
+		class="com.core.spring.controller.CompanyController">
+		<property name="companyService" ref="companyService"></property>
+	</bean>
+
+	<bean id="companyService"
+		class="com.core.spring.service.impl.CompanyServiceImpl">
+		<property name="company" ref="companyId"></property>
+		</bean>
+
+	<bean id="companyId" class="com.core.spring.dto.Company">
+	<property name="id" value="1"></property>
+	<property name="name" value="GIC"></property>
+	<property name="address" value="Japan"></property>
+	<property name="phone" value="012345"></property>
+	</bean>
+</beans>
