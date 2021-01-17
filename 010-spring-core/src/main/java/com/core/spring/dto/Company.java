@@ -7,6 +7,9 @@ public class Company {
 	private String address;
 	private String phone;
 	
+	public Company() {
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -30,21 +33,6 @@ public class Company {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	
-	public void initCompany() {
-		this.id = 1;
-		this.name = "GIC Japan";
-		this.address = "Japan";
-		System.out.println("Init Method" + this);
-		
-	}
-	
-	public void destroyCompany() {
-		this.id = 1;
-		this.name = "GIC destroy";
-		this.address = "Japan destroy";
-		System.out.println("Destroy Method" + this);
 	}
 	
 	@Override

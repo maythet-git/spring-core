@@ -1,11 +1,18 @@
-package com.core.spring.dto;
+package com.core.spring.dao.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Company {
 	
 	private Integer id;
 	private String name;
 	private String address;
 	private String phone;
+	
+	public Company() {
+		//init();
+	}
 	
 	public Integer getId() {
 		return id;
@@ -32,19 +39,18 @@ public class Company {
 		this.phone = phone;
 	}
 	
-	public void initCompany() {
-		this.id = 1;
-		this.name = "GIC Japan";
-		this.address = "Japan";
-		System.out.println("Init Method" + this);
-		
-	}
+	/*
+	 * private void init() { this.id = 1; this.name = "GIC"; this.address = "Japan";
+	 * this.phone = "012345"; }
+	 */
 	
-	public void destroyCompany() {
+	public Company init() {
 		this.id = 1;
-		this.name = "GIC destroy";
-		this.address = "Japan destroy";
-		System.out.println("Destroy Method" + this);
+		this.name = "GIC";
+		this.address = "Japan";
+		this.phone = "012345";
+		
+		return this;
 	}
 	
 	@Override

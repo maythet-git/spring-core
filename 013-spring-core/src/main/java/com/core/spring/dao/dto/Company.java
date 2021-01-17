@@ -1,56 +1,68 @@
-package com.core.spring.dto;
+package com.core.spring.dao.dto;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Company {
-	
+
 	private Integer id;
 	private String name;
 	private String address;
 	private String phone;
-	
+
+	public Company() {
+		//init();
+	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 	public String getPhone() {
 		return phone;
 	}
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
-	public void initCompany() {
+
+	/*
+	 * private void init() { this.id = 1; this.name = "GIC"; this.address = "Japan";
+	 * this.phone = "012345"; }
+	 */
+
+	public Company init() {
 		this.id = 1;
-		this.name = "GIC Japan";
+		this.name = "GIC";
 		this.address = "Japan";
-		System.out.println("Init Method" + this);
-		
+		this.phone = "012345";
+
+		return this;
 	}
-	
-	public void destroyCompany() {
-		this.id = 1;
-		this.name = "GIC destroy";
-		this.address = "Japan destroy";
-		System.out.println("Destroy Method" + this);
-	}
-	
+
 	@Override
 	public String toString() {
 		return "Company [id=" + id + ", name=" + name + ", address=" + address + ", phone=" + phone + "]";
 	}
-	
-	
+
 }
